@@ -1,7 +1,6 @@
 function lastIndexOf(array, index) {
   let lastPosition = -1;
-  let i = 0;
-  for (i = 0; i <= array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (array[i] === index) {
       lastPosition = i;
     }
