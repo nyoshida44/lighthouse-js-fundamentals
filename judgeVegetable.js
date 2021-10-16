@@ -1,20 +1,13 @@
 const judgeVegetable = function (vegetables, metric) {
-  let redness = 0;
-  let plumpness = 0;
+  let value = 0;
   let leader;
   for (let i = 0; i < vegetables.length; i++) {
-    if (metric === 'redness') {
-      if (vegetables[i].redness > redness) {
-        redness = vegetables[i].redness;
-        leader = vegetables[i].submitter;
-      }
-    } if (metric === 'plumpness') {
-      if (vegetables[i].plumpness > plumpness) {
-        plumpness = vegetables[i].plumpness;
-        leader = vegetables[i].submitter;
-      } 
+    if (vegetables[i][metric] > value) {
+      value = vegetables[i][metric];
+      leader = vegetables[i].submitter;
     }
   }
+  // console.log(value);
   // console.log(leader);
   return leader;
 }
@@ -38,6 +31,6 @@ const vegetables = [
   }
 ];
 
-const metric = 'redness';
+const metric = 'plumpness';
 
 judgeVegetable(vegetables, metric);
